@@ -1,9 +1,6 @@
 /*
 let greeting = document.querySelector("#greeting")
-
-
 greeting.addEventListener("event", domClick)
-
 
 function domClick() {
   console.log("Tıklandı")
@@ -11,13 +8,12 @@ function domClick() {
 }*/
 
 
-let counter = 0
-
+let counter = localStorage.getItem('counter') ? Number(localStorage.getItem('counter')) : 0
 let counterDOM = document.querySelector("#counter")
 let increaseDOM = document.querySelector("#increase")
 let decleraseDOm = document.querySelector("#declerase")
 
-counterDOM.innerHTML = 0
+counterDOM.innerHTML = counter
 
 increaseDOM.addEventListener("click",clickEvent)
 decleraseDOm.addEventListener("click",clickEvent)
@@ -33,23 +29,47 @@ function clickEvent(){
   }
 }
 
-
-
 function clickEvent(){
   console.log(this.id)
   this.id == "increase" ? counterDOM.innerHTML = counter += 1 : counterDOM.innerHTML = counter -= 1
 }*/
 
 function clickEvent(){
-
-
-  console.log(this.id)
+  
   this.id == "increase" ? counter += 1 : counter -= 1
+  localStorage.setItem('counter', counter) //localstorage' a counter'ımı set ettim.
   counterDOM.innerHTML = counter
-
 
  }
 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ //------------------------------------------------------------------------------
+/*
  const form = document.querySelector('form');
  const ul = document.querySelector('ul');
  const button = document.querySelector('button');
@@ -85,4 +105,4 @@ function clickEvent(){
    }
    itemsArray = [];
  });
-    
+   */ 
